@@ -30,4 +30,16 @@
         android:id="@+id/characterDetailFragment"
         android:name="com.example.starwars.ui.characters.CharacterDetailFragment"
         android:label="CharacterDetailFragment" />
+    <fragment
+        android:id="@+id/starshipsFragment"
+        android:name="com.example.starwars.ui.starships.StarshipsFragment"
+        android:label="StarshipsFragment" >
+        <action
+            android:id="@+id/action_starshipsFragment_to_starshipsDetailFragment"
+            app:destination="@id/starshipsDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/starshipsDetailFragment"
+        android:name="com.example.starwars.ui.starships.StarshipsDetailFragment"
+        android:label="StarshipsDetailFragment" />
 </navigation>

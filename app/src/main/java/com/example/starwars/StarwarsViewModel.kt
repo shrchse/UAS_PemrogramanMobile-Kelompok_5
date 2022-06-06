@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.starwars.network.Characters
 import com.example.starwars.network.StarWarsApiService
+import com.example.starwars.network.Starships
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
@@ -23,6 +24,11 @@ class StarwarsViewModel:ViewModel(){
     val soloCharacter:LiveData<Characters.Result> = _soloCharacter
 
     // todo
+    //Api Starships - ShipStar
+    private val _starships = MutableLiveData<Starships>()
+    val starships:LiveData<Starships> = _starships
+    private val _soloStarships =MutableLiveData<Starships.Starships>()
+    val soloStarships:LiveData<Starships.Starships> = _soloStarships
 
     fun getCharacter() {
         viewModelScope.launch {
@@ -34,7 +40,20 @@ class StarwarsViewModel:ViewModel(){
             }
         }
     }
-        fun onCharacterClicked(characters: Characters.Result){
-            _soloCharacter.value = characters
+    fun onCharacterClicked(characters: Characters.Result){
+        _soloCharacter.value = characters
+    }
+    fun getStarships(){
+        viewModelScope.launch {
+            try {
+                _starships.value = StarWarsApiService.retrofitServiceApi.getStarship()
+            } catch (e: Exception) {
+                Log.d("error",e.printStackTrace().toString())
+                _starships.value = Starships(listOf())
+            }
         }
+    }
+    fun onStarshipClicked(starships: Starships.Starships){
+        _soloStarships.value = starships
+    }
 }

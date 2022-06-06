@@ -4,6 +4,7 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.create
 import retrofit2.http.GET
 
 private const val BASE_URL = "https://swapi.dev/api/"
@@ -18,9 +19,10 @@ private val retrofit = Retrofit.Builder()
     .build()
 //people
 interface StarwarsServiceApi {
-
     @GET("people")
     suspend fun getCharacter(): Characters
+    @GET("starships")
+    suspend fun getStarship(): Starships
 }
 
 object StarWarsApiService {
