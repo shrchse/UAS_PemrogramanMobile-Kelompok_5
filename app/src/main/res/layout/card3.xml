@@ -30,7 +30,7 @@
             android:gravity="center"
             android:maxLines="1"
             android:padding="8dp"
-            android:text="@{}"
+            android:text="@{film.title}"
             android:textAlignment="center"
             android:fontFamily="serif-monospace"
             android:textStyle="bold"

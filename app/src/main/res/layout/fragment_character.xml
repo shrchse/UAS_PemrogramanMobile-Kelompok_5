@@ -11,16 +11,17 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:listData="@{viewModel.characters.results}"
-            tools:listitem="@layout/card"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:listItem="@layout/card"/>
+            app:listData="@{viewModel.characters.results}"
+            tools:listItem="@layout/card"
+            tools:listitem="@layout/card" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
