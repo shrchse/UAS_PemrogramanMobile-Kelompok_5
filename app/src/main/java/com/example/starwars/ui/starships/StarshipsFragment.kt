@@ -12,7 +12,7 @@ import com.example.starwars.StarwarsViewModel
 import com.example.starwars.databinding.FragmentStarshipsBinding
 
 class StarshipsFragment : Fragment() {
-    private val viewModel: StarwarsViewModel by activityViewModels()
+    val viewModel: StarwarsViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,8 +23,8 @@ class StarshipsFragment : Fragment() {
         viewModel.getStarship()
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
-        binding.recyclerView.adapter = StarshipsAdapter(StarshipsListener { startships ->
-            viewModel.onStarshipClicked(startships)
+        binding.recyclerView.adapter = StarshipsAdapter(StarshipsListener { starship ->
+            viewModel.onStarshipClicked(starship)
             findNavController()
                 .navigate(R.id.action_starshipsFragment_to_starshipsDetailFragment)
         })
