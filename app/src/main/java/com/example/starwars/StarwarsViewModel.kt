@@ -6,10 +6,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.starwars.network.Characters
+import com.example.starwars.network.Films
 import com.example.starwars.network.StarWarsApiService
 import com.example.starwars.network.Starships
+import com.example.starwars.ui.film.FilmAdapter
 import kotlinx.coroutines.launch
-import java.lang.Exception
+//import java.lang.Exception
+import kotlin.Exception
 
 enum class ApiStatus {LOADING, ERROR, DONE}
 
@@ -28,6 +31,12 @@ class StarwarsViewModel:ViewModel(){
     val starships:LiveData<Starships> = _starships
     private val _soloStarships = MutableLiveData<Starships.Data>()
     val soloStarships:LiveData<Starships.Data> = _soloStarships
+
+    //Api Film
+    private val _film = MutableLiveData<Films>()
+    val film:LiveData<Films> = _film
+    private val _soloFilm = MutableLiveData<Films.Result>()
+    val soloFilm:LiveData<Films.Result> = _soloFilm
 
     fun getCharacter() {
         viewModelScope.launch {
@@ -54,5 +63,18 @@ class StarwarsViewModel:ViewModel(){
     }
     fun onStarshipClicked(data: Starships.Data){
         _soloStarships.value = data
+    }
+    fun getFilm(){
+        viewModelScope.launch {
+            try{
+                _film.value = StarWarsApiService.retrofitServiceApi.getFilm()
+            } catch (e:Exception){
+                Log.d("error", e.printStackTrace().toString())
+                _film.value = Films(listOf())
+            }
+        }
+    }
+    fun onFilmClicked(data: Films.Result){
+        _soloFilm.value = data
     }
 }
