@@ -13,7 +13,8 @@ class FilmAdapter(private val clickListener: FilmListener) :
     class FilmViewHolder(var binding: Card3Binding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(clickListener: FilmListener, data: Films.Result ) {
-            binding.film= data
+
+            binding.film = data
             binding.clickListener = clickListener
             binding.executePendingBindings()
         }
@@ -37,7 +38,7 @@ class FilmAdapter(private val clickListener: FilmListener) :
         }
 
         override fun areContentsTheSame(oldItem: Films.Result, newItem: Films.Result): Boolean {
-            return oldItem.opening_crawl == newItem.opening_crawl
+            return oldItem.title == newItem.title
         }
     }
 }
