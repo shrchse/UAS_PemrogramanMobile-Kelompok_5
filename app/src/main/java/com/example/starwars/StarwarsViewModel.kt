@@ -9,9 +9,7 @@ import com.example.starwars.network.Characters
 import com.example.starwars.network.Films
 import com.example.starwars.network.StarWarsApiService
 import com.example.starwars.network.Starships
-import com.example.starwars.ui.film.FilmAdapter
 import kotlinx.coroutines.launch
-//import java.lang.Exception
 import kotlin.Exception
 
 enum class ApiStatus {LOADING, ERROR, DONE}
@@ -61,10 +59,10 @@ class StarwarsViewModel:ViewModel(){
             }
         }
     }
-    fun onStarshipClicked(data: Starships.Data){
-        _soloStarships.value = data
+    fun onStarshipClicked(starships: Starships.Data){
+        _soloStarships.value = starships
     }
-    fun getFilm(){
+    fun getFilms(){
         viewModelScope.launch {
             try{
                 _film.value = StarWarsApiService.retrofitServiceApi.getFilm()
@@ -74,7 +72,7 @@ class StarwarsViewModel:ViewModel(){
             }
         }
     }
-    fun onFilmClicked(data: Films.Result){
-        _soloFilm.value = data
+    fun onFilmClicked(films: Films.Result){
+        _soloFilm.value = films
     }
 }
