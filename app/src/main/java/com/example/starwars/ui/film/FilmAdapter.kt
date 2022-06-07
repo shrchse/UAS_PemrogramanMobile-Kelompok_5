@@ -13,7 +13,7 @@ class FilmAdapter(private val clickListener: FilmListener) :
     class FilmViewHolder(var binding: Card3Binding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(clickListener: FilmListener, data: Films.Result ) {
-            binding.starship= data
+            binding.film= data
             binding.clickListener = clickListener
             binding.executePendingBindings()
         }
