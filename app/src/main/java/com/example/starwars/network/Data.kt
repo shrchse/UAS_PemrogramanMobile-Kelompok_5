@@ -1,13 +1,9 @@
 package com.example.starwars.network
 
-class Starships {
-}
-
-//starship
 data class Starships(
-    val results: List<Starships>
+    val results: List<Data>
 ) {
-    data class Starships(
+    data class Data(
         val name: String,
         val model: String
     )

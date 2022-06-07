@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.starwars.StarwarsViewModelKt" />
+            type="com.example.starwars.StarwarsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="@{viewModel.}"
+            android:text="@{viewModel.soloStarships.name}"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
