@@ -7,7 +7,7 @@
             name="starship"
             type="com.example.starwars.network.Starships.Data" />
         <variable
-            name="clickListener"
+            name="starshipClickListener"
             type="com.example.starwars.ui.starships.StarshipsListener" />
     </data>
 
@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="18dp"
-        android:onClick="@{()->clickListener.onClick(starship)}"
+        android:onClick="@{()->starshipClickListener.onClick(starship)}"
         android:focusable="false"
         app:cardElevation="4dp"
         app:cardCornerRadius="10dp">

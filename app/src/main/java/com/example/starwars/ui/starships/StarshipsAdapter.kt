@@ -9,12 +9,12 @@ import com.example.starwars.databinding.Card2Binding
 import com.example.starwars.network.Starships
 
 class StarshipsAdapter(private val clickListener: StarshipsListener) :
-    ListAdapter<Starships.Data, StarshipsAdapter.StarshipsViewHolder>(DiffCallback){
+    ListAdapter<Starships.Data, StarshipsAdapter.StarshipsViewHolder?>(DiffCallback){
     class StarshipsViewHolder(var binding: Card2Binding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(clickListener: StarshipsListener, data: Starships.Data ) {
-            binding.starship= data
-            binding.clickListener = clickListener
+        fun bind(clickListener: StarshipsListener, starships: Starships.Data ) {
+            binding.starship = starships
+            binding.starshipClickListener = clickListener
             binding.executePendingBindings()
         }
     }
@@ -27,8 +27,8 @@ class StarshipsAdapter(private val clickListener: StarshipsListener) :
     }
 
     override fun onBindViewHolder(holder: StarshipsViewHolder, position: Int) {
-        val characters = getItem(position)
-        holder.bind(clickListener, characters)
+        val starships = getItem(position)
+        holder.bind(clickListener, starships)
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<Starships.Data>() {
