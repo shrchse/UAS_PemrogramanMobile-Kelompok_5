@@ -23,6 +23,8 @@ interface StarwarsServiceApi {
     suspend fun getCharacter(): Characters
     @GET("starships")
     suspend fun getStarship(): Starships
+    @GET("films")
+    suspend fun getFilm(): Films
 }
 
 object StarWarsApiService {
