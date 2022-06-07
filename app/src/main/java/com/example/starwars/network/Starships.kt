@@ -5,6 +5,8 @@ data class Starships(
 ) {
     data class Data(
         val name: String,
-        val model: String
+        val model: String,
+        val manufacturer: String,
+        val starship_class: String
     )
 }

@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.starwars.ui.characters.CharacterFragment"
-        android:label="@string/menu_home"
+        android:label="@string/menu_Character"
         tools:layout="@layout/fragment_character" >
         <action
             android:id="@+id/action_nav_home_to_characterDetailFragment"
@@ -18,14 +18,13 @@
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.starwars.ui.film.FilmFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_film" />
+        android:label="@string/menu_Films"
+        tools:layout="@layout/fragment_film" >
+        <action
+            android:id="@+id/action_nav_gallery_to_filmDetailFragment"
+            app:destination="@id/filmDetailFragment" />
+    </fragment>
 
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.starwars.ui.film.FilmFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
     <fragment
         android:id="@+id/characterDetailFragment"
         android:name="com.example.starwars.ui.characters.CharacterDetailFragment"
@@ -33,13 +32,21 @@
     <fragment
         android:id="@+id/starshipsFragment"
         android:name="com.example.starwars.ui.starships.StarshipsFragment"
-        android:label="StarshipsFragment" >
+        android:label="@string/menu_Starships"
+        android:layout="@layout/fragment_starships">
         <action
             android:id="@+id/action_starshipsFragment_to_starshipsDetailFragment"
+            app:destination="@id/starshipsDetailFragment" />
+        <action
+            android:id="@+id/action_starshipsFragment_to_starshipsDetailFragment2"
             app:destination="@id/starshipsDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/starshipsDetailFragment"
         android:name="com.example.starwars.ui.starships.StarshipsDetailFragment"
         android:label="StarshipsDetailFragment" />
+    <fragment
+        android:id="@+id/filmDetailFragment"
+        android:name="com.example.starwars.ui.film.FilmDetailFragment"
+        android:label="FilmDetailFragment" />
 </navigation>
