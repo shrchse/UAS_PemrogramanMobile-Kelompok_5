@@ -42,6 +42,6 @@ class StarshipsAdapter(private val clickListener: StarshipsListener) :
     }
 }
 
-class StarshipsListener(val clickListener: (characters: Starships.Data) -> Unit) {
-    fun onClick(characters: Starships.Data) = clickListener(characters)
+class StarshipsListener(val clickListener: (starships: Starships.Data) -> Unit) {
+    fun onClick(starships: Starships.Data) = clickListener(starships)
 }

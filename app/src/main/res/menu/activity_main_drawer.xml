@@ -13,7 +13,7 @@
             android:icon="@drawable/ic_menu_starship"
             android:title="@string/menu_Starships" />
         <item
-            android:id="@+id/film"
+            android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_films"
             android:title="@string/menu_Films" />
     </group>
