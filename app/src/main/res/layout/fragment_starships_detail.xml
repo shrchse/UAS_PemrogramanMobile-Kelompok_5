@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.starwars.StarwarsViewModelKt" />
+            type="com.example.starwars.StarwarsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

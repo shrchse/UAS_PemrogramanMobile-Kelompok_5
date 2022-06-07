@@ -23,12 +23,11 @@ class StarwarsViewModel:ViewModel(){
     private val _soloCharacter = MutableLiveData<Characters.Result>()
     val soloCharacter:LiveData<Characters.Result> = _soloCharacter
 
-    // todo
     //Api Starships - ShipStar
     private val _starships = MutableLiveData<Starships>()
     val starships:LiveData<Starships> = _starships
-    private val _soloStarships =MutableLiveData<Starships.Starships>()
-    val soloStarships:LiveData<Starships.Starships> = _soloStarships
+    private val _soloStarships = MutableLiveData<Starships.Data>()
+    val soloStarships:LiveData<Starships.Data> = _soloStarships
 
     fun getCharacter() {
         viewModelScope.launch {
@@ -43,7 +42,7 @@ class StarwarsViewModel:ViewModel(){
     fun onCharacterClicked(characters: Characters.Result){
         _soloCharacter.value = characters
     }
-    fun getStarships(){
+    fun getStarship(){
         viewModelScope.launch {
             try {
                 _starships.value = StarWarsApiService.retrofitServiceApi.getStarship()
@@ -53,7 +52,7 @@ class StarwarsViewModel:ViewModel(){
             }
         }
     }
-    fun onStarshipClicked(starships: Starships.Starships){
-        _soloStarships.value = starships
+    fun onStarshipClicked(data: Starships.Data){
+        _soloStarships.value = data
     }
 }

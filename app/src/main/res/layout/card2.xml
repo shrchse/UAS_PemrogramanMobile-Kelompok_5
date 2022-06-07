@@ -5,7 +5,7 @@
     <data>
         <variable
             name="starship"
-            type="com.example.starwars.network.Starships.Starships" />
+            type="com.example.starwars.network.Starships.Data" />
         <variable
             name="clickListener"
             type="com.example.starwars.ui.starships.StarshipsListener" />

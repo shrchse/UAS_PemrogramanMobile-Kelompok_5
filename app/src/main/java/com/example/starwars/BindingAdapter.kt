@@ -13,7 +13,7 @@ fun bindRecyclerViewCharacter(recyclerView: RecyclerView, data: List<Characters.
     adapter.submitList(data)
 }
 @BindingAdapter("listData")
-fun bindRecyclerviewStarships(recyclerView: RecyclerView, data : List<Starships.Starships>?){
+fun bindRecyclerviewStarships(recyclerView: RecyclerView, data : List<Starships.Data>?){
     val adapter = recyclerView.adapter as StarshipsAdapter
     adapter.submitList(data)
 }

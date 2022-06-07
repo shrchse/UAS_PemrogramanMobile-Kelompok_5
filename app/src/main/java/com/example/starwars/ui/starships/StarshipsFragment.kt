@@ -9,10 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.starwars.R
 import com.example.starwars.StarwarsViewModel
-import com.example.starwars.databinding.FragmentCharacterBinding
 import com.example.starwars.databinding.FragmentStarshipsBinding
-import com.example.starwars.ui.characters.CharacterAdapter
-import com.example.starwars.ui.characters.CharacterListener
 
 class StarshipsFragment : Fragment() {
     private val viewModel: StarwarsViewModel by activityViewModels()
@@ -23,7 +20,7 @@ class StarshipsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val binding = FragmentStarshipsBinding.inflate(inflater)
-        viewModel.getStarships()
+        viewModel.getStarship()
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
         binding.recyclerView.adapter = StarshipsAdapter(StarshipsListener { startships ->

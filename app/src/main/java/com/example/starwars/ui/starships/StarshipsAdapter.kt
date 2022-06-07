@@ -7,15 +7,13 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.starwars.databinding.Card2Binding
 import com.example.starwars.network.Starships
-import com.example.starwars.ui.characters.CharacterAdapter
-import com.example.starwars.ui.starships.StarshipsAdapter
 
 class StarshipsAdapter(private val clickListener: StarshipsListener) :
-    ListAdapter<Starships.Starships, StarshipsAdapter.StarshipsViewHolder>(DiffCallback){
+    ListAdapter<Starships.Data, StarshipsAdapter.StarshipsViewHolder>(DiffCallback){
     class StarshipsViewHolder(var binding: Card2Binding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(clickListener: StarshipsListener, starships: Starships.Starships ) {
-            binding.starship= starships
+        fun bind(clickListener: StarshipsListener, data: Starships.Data ) {
+            binding.starship= data
             binding.clickListener = clickListener
             binding.executePendingBindings()
         }
@@ -33,17 +31,17 @@ class StarshipsAdapter(private val clickListener: StarshipsListener) :
         holder.bind(clickListener, characters)
     }
 
-    companion object DiffCallback : DiffUtil.ItemCallback<Starships.Starships>() {
-        override fun areItemsTheSame(oldItem: Starships.Starships, newItem: Starships.Starships): Boolean {
+    companion object DiffCallback : DiffUtil.ItemCallback<Starships.Data>() {
+        override fun areItemsTheSame(oldItem: Starships.Data, newItem: Starships.Data): Boolean {
             return oldItem.name == newItem.name
         }
 
-        override fun areContentsTheSame(oldItem: Starships.Starships, newItem: Starships.Starships): Boolean {
+        override fun areContentsTheSame(oldItem: Starships.Data, newItem: Starships.Data): Boolean {
             return oldItem.name == newItem.name
         }
     }
 }
 
-class StarshipsListener(val clickListener: (characters: Starships.Starships) -> Unit) {
-    fun onClick(characters: Starships.Starships) = clickListener(characters)
+class StarshipsListener(val clickListener: (characters: Starships.Data) -> Unit) {
+    fun onClick(characters: Starships.Data) = clickListener(characters)
 }

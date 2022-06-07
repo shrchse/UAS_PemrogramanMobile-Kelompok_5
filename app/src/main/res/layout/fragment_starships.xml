@@ -15,7 +15,7 @@
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:listData="@{viewModel.starships.Starships}"
+            app:listData="@{viewModel.starships.results}"
             tools:listitem="@layout/card"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintStart_toStartOf="parent"
