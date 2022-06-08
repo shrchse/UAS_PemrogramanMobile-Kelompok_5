@@ -32,7 +32,7 @@
             android:padding="8dp"
             android:text="@{starship.name}"
             android:textAlignment="center"
-            android:fontFamily="serif-monospace"
+            android:fontFamily="sans-serif-condensed-medium"
             android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="26sp"

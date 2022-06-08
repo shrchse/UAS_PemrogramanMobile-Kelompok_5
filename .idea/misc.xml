@@ -6,11 +6,15 @@
         <entry key="..\:/StarWars/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
         <entry key="..\:/StarWars/app/src/main/res/layout/app_bar_main.xml" value="0.16847826086956522" />
         <entry key="..\:/StarWars/app/src/main/res/layout/card.xml" value="0.2734375" />
-        <entry key="..\:/StarWars/app/src/main/res/layout/card2.xml" value="0.1265625" />
-        <entry key="..\:/StarWars/app/src/main/res/layout/card3.xml" value="0.1265625" />
+        <entry key="..\:/StarWars/app/src/main/res/layout/card2.xml" value="0.2" />
+        <entry key="..\:/StarWars/app/src/main/res/layout/card3.xml" value="0.16" />
         <entry key="..\:/StarWars/app/src/main/res/layout/content_main.xml" value="0.27447916666666666" />
         <entry key="..\:/StarWars/app/src/main/res/layout/fragment_character.xml" value="0.23143115942028986" />
         <entry key="..\:/StarWars/app/src/main/res/layout/fragment_character_detail.xml" value="0.264" />
+        <entry key="..\:/StarWars/app/src/main/res/layout/fragment_film.xml" value="0.1334853090172239" />
+        <entry key="..\:/StarWars/app/src/main/res/layout/fragment_film_detail.xml" value="0.4" />
+        <entry key="..\:/StarWars/app/src/main/res/layout/fragment_starships_detail.xml" value="0.176" />
+        <entry key="..\:/StarWars/app/src/main/res/layout/nav_header_main.xml" value="0.27447916666666666" />
       </map>
     </option>
   </component>
