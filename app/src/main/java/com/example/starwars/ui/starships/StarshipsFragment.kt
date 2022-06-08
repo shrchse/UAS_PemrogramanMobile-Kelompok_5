@@ -23,7 +23,7 @@ class StarshipsFragment : Fragment() {
         viewModel.getStarship()
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
-        binding.recyclerView.adapter = StarshipsAdapter(StarshipsListener { starship ->
+        binding.recyclerView2.adapter = StarshipsAdapter(StarshipsListener { starship ->
             viewModel.onStarshipClicked(starship)
             findNavController()
                 .navigate(R.id.action_starshipsFragment_to_starshipsDetailFragment)

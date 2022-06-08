@@ -9,7 +9,7 @@ import com.example.starwars.databinding.Card2Binding
 import com.example.starwars.network.Starships
 
 class StarshipsAdapter(private val clickListener: StarshipsListener) :
-    ListAdapter<Starships.Data, StarshipsAdapter.StarshipsViewHolder?>(DiffCallback){
+    ListAdapter<Starships.Data, StarshipsAdapter.StarshipsViewHolder>(DiffCallback){
     class StarshipsViewHolder(var binding: Card2Binding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(clickListener: StarshipsListener, starships: Starships.Data ) {
@@ -37,7 +37,7 @@ class StarshipsAdapter(private val clickListener: StarshipsListener) :
         }
 
         override fun areContentsTheSame(oldItem: Starships.Data, newItem: Starships.Data): Boolean {
-            return oldItem.name == newItem.name
+            return oldItem.starship_class == newItem.starship_class
         }
     }
 }

@@ -9,7 +9,7 @@
         android:id="@+id/nav_home"
         android:name="com.example.starwars.ui.characters.CharacterFragment"
         android:label="@string/menu_Character"
-        tools:layout="@layout/fragment_character" >
+        tools:layout="@layout/fragment_starships_detail" >
         <action
             android:id="@+id/action_nav_home_to_characterDetailFragment"
             app:destination="@id/characterDetailFragment" />

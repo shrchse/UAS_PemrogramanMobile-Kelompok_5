@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.example.starwars.StarwarsViewModel
 import com.example.starwars.databinding.FragmentStarshipsBinding
+import com.example.starwars.databinding.FragmentStarshipsDetailBinding
 
 class StarshipsDetailFragment : Fragment() {
     private val viewModel: StarwarsViewModel by activityViewModels()
@@ -17,7 +18,7 @@ class StarshipsDetailFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentStarshipsBinding.inflate(inflater)
+        val binding = FragmentStarshipsDetailBinding.inflate(inflater)
         binding.lifecycleOwner=this
         binding.viewModel = viewModel
         return binding.root

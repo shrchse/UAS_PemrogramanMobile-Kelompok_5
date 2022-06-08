@@ -26,7 +26,7 @@ class FilmFragment : Fragment() {
         binding.recyclerView.adapter= FilmAdapter(FilmListener { film ->
             viewModel.onFilmClicked(film)
             findNavController()
-                .navigate(R.id.action_nav_home_to_characterDetailFragment)
+                .navigate(R.id.action_nav_gallery_to_filmDetailFragment)
         })
         return binding.root
     }
